@@ -1,6 +1,6 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
-import { PersonaResponse } from "../types";
+import { PersonaResponse } from "../types.ts";
 
 export class GeminiService {
   private ai: GoogleGenAI;
@@ -21,15 +21,12 @@ export class GeminiService {
             colors: {
               type: Type.ARRAY,
               items: { type: Type.STRING },
-              description: "2-3 hex color codes for a gradient",
             },
             quote: {
               type: Type.STRING,
-              description: "A poetic sentence fitting the name",
             },
             mood: {
               type: Type.STRING,
-              description: "A one or two word mood or personality trait (e.g. 灵动, 深邃)",
             },
           },
           required: ["colors", "quote", "mood"],
